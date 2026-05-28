@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Teddy & Co Cafe Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="glass-header">
+        <div class="header-left">
+            <button id="menu-toggle" class="icon-btn">☰</button>
+            <div class="logo">
+                <h1>🧸 Teddy & Co</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Slide Side Bar -->
+    <div id="sidebar-overlay" class="overlay hidden"></div>
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button id="close-sidebar" class="icon-btn">✕</button>
+        </div>
+        <nav class="sidebar-nav" id="sidebar-nav">
+            <!-- Categories injected here -->
+        </nav>
+    </aside>
+
+    <main class="menu-container" id="menu-container">
+        <!-- Loader -->
+        <div class="loader" id="loader">Loading menu... 🍯</div>
+        <!-- Menu items will be injected here -->
+    </main>
+
+    <!-- Floating Action Button for Tray (Thumb Zone) -->
+    <button id="fab-tray" class="fab-tray hidden">
+        <span class="fab-icon">🛒</span>
+        <span id="fab-count" class="fab-badge">0</span>
+    </button>
+
+    <!-- Tray Bottom Sheet Modal -->
+    <div id="tray-modal" class="modal hidden">
+        <div class="overlay hidden" id="modal-overlay"></div>
+        <div class="bottom-sheet">
+            <div class="drag-handle"></div>
+            <div class="modal-header">
+                <h2>Your Tray</h2>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body" id="tray-items">
+                <!-- Selected items will appear here -->
+            </div>
+            <div class="modal-footer">
+                <p class="instruction">Show this screen to the cashier to order!</p>
+                <div class="total-estimation">Est. Total: $<span id="tray-total">0.00</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customization Add-on Modal -->
+    <div id="addon-modal" class="modal hidden">
+        <div class="overlay hidden" id="addon-overlay"></div>
+        <div class="bottom-sheet">
+            <div class="drag-handle"></div>
+            <div class="modal-header">
+                <h2 id="addon-item-name">Customize</h2>
+                <button id="close-addon" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body" style="padding-bottom: 2rem;">
+                <div id="visual-builder-container" class="visual-builder-container hidden">
+                    <div class="visual-builder" id="visual-builder">
+                        <!-- Image layers injected here -->
+                    </div>
+                </div>
+                <div id="addon-item-desc" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;"></div>
+                <div id="addon-list" style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <!-- Modifiers injected here -->
+                </div>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="total-estimation" style="font-size: 1.4rem;">$<span id="addon-total">0.00</span></div>
+                <button id="addon-add-btn" style="background: var(--accent); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 12px; font-weight: bold; font-size: 1.1rem; cursor: pointer;">Add to Tray</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
