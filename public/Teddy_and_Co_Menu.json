@@ -1,0 +1,314 @@
+{
+    "restaurant_name": "TÉDDY & CO",
+    "contact": {
+        "phone": "0416 728 104",
+        "instagram": "@teddyincoperth"
+    },
+    "notes": "Cakes of the day: Please browse at our cabinet",
+    "menu_sections": [
+        {
+            "section_name": "Signature Drinks",
+            "items": [
+                {
+                    "name": "Pistachio latte",
+                    "price": 9.0
+                },
+                {
+                    "name": "Mont blanc",
+                    "price": 9.5
+                },
+                {
+                    "name": "Banana latte",
+                    "price": 7.5
+                },
+                {
+                    "name": "Coconut latte",
+                    "price": 8.5
+                },
+                {
+                    "name": "Affogato & matcha",
+                    "price": 8.5
+                },
+                {
+                    "name": "Honey butterfly lemonade soda",
+                    "price": 8.5
+                },
+                {
+                    "name": "Orange zest matcha latte",
+                    "price": 8.5
+                }
+            ]
+        },
+        {
+            "section_name": "Vietnamese Coffee",
+            "description": "Authentic slow-drip coffee, strong & richer than normal coffee",
+            "items": [
+                {
+                    "name": "Phin black hot",
+                    "price": 6.5
+                },
+                {
+                    "name": "Phin black ice",
+                    "price": 7.0
+                },
+                {
+                    "name": "Phin milk hot",
+                    "price": 7.5
+                },
+                {
+                    "name": "Phin milk ice",
+                    "price": 8.0
+                },
+                {
+                    "name": "Phin cream coffee ice",
+                    "price": 8.0
+                }
+            ]
+        },
+        {
+            "section_name": "Espresso & Tea",
+            "items": [
+                {
+                    "name": "Double espresso",
+                    "price": 5.5
+                },
+                {
+                    "name": "Flat white / latte / cappuccino (small)",
+                    "price": 5.3
+                },
+                {
+                    "name": "Flat white / latte / cappuccino (large)",
+                    "price": 6.3
+                },
+                {
+                    "name": "Macchiato (short)",
+                    "price": 5.0
+                },
+                {
+                    "name": "Macchiato (long)",
+                    "price": 5.6
+                },
+                {
+                    "name": "Long black (hot)",
+                    "price": 5.0
+                },
+                {
+                    "name": "Long black (ice)",
+                    "price": 5.6
+                },
+                {
+                    "name": "Mocha (hot)",
+                    "price": 6.3
+                },
+                {
+                    "name": "Mocha (ice)",
+                    "price": 7.0
+                },
+                {
+                    "name": "Hojicha latte / turmeric latte (hot)",
+                    "price": 7.3
+                },
+                {
+                    "name": "Hojicha latte / turmeric latte (ice)",
+                    "price": 7.8
+                },
+                {
+                    "name": "Green tea / lemongrass ginger / jasmine",
+                    "price": 5.8
+                }
+            ]
+        },
+        {
+            "section_name": "Matcha Lover",
+            "items": [
+                {
+                    "name": "Matcha 100%",
+                    "price": 7.5
+                },
+                {
+                    "name": "Honey Cinnamon Matcha",
+                    "price": 8.0
+                },
+                {
+                    "name": "Matcha Latte",
+                    "price": 7.5
+                },
+                {
+                    "name": "Matcha Strawberry",
+                    "price": 8.5
+                },
+                {
+                    "name": "Coco Matcha",
+                    "price": 8.0
+                },
+                {
+                    "name": "Earthy Matcha",
+                    "price": 9.0
+                },
+                {
+                    "name": "Banana Matcha",
+                    "price": 8.0
+                },
+                {
+                    "name": "Double Matcha Brulee",
+                    "price": 9.5
+                }
+            ]
+        },
+        {
+            "section_name": "Soda Crush",
+            "items": [
+                {
+                    "name": "Lychee Mint",
+                    "price": 8.5
+                },
+                {
+                    "name": "Coco-lime",
+                    "price": 8.5
+                },
+                {
+                    "name": "Peach Yakult",
+                    "price": 8.5
+                },
+                {
+                    "name": "Strawberry Peach",
+                    "price": 8.5
+                },
+                {
+                    "name": "White Grape",
+                    "price": 8.5
+                },
+                {
+                    "name": "Mojito Grapefruit",
+                    "price": 8.5
+                }
+            ]
+        },
+        {
+            "section_name": "Teddy's Cocoa",
+            "items": [
+                {
+                    "name": "Classic Cocoa",
+                    "price": 6.5
+                },
+                {
+                    "name": "Pistachio Cocoa",
+                    "price": 8.0
+                },
+                {
+                    "name": "Strawberry Covered Cocoa",
+                    "price": 8.0
+                },
+                {
+                    "name": "Butterscotch Cream Cocoa",
+                    "price": 8.0
+                },
+                {
+                    "name": "Banana Cocoa",
+                    "price": 8.0
+                }
+            ]
+        },
+        {
+            "section_name": "Croc Waffle",
+            "subsections": [
+                {
+                    "subsection_name": "Signature Series",
+                    "items": [
+                        {
+                            "name": "White Chocolate Matcha Croc (Infused matcha glaze with silky white chocolate)",
+                            "price": 13.9
+                        }
+                    ]
+                },
+                {
+                    "subsection_name": "Classic Series",
+                    "items": [
+                        {
+                            "name": "Original Croc Waffle (Golden crispy waffle with maple syrup & icing sugar)",
+                            "price": 10.9
+                        },
+                        {
+                            "name": "Custard Croc Waffle (Filled with smooth vanilla custard cream)",
+                            "price": 12.9
+                        },
+                        {
+                            "name": "Chocolate Croc Waffle (Filled with rich and warm indulgent dark chocolate)",
+                            "price": 12.9
+                        }
+                    ]
+                },
+                {
+                    "subsection_name": "Premium Special",
+                    "items": [
+                        {
+                            "name": "Melted Full Cheese Waffle (Savory and stretchy melted cheese)",
+                            "price": 14.9
+                        }
+                    ]
+                },
+                {
+                    "subsection_name": "Combos & Add-ons",
+                    "items": [
+                        {
+                            "name": "Croc Bite + Any Drinks",
+                            "price_range": "16.9 - 18.9"
+                        },
+                        {
+                            "name": "Ice Cream (Vanilla / Matcha)",
+                            "price": 2.0,
+                            "is_addon": true
+                        },
+                        {
+                            "name": "Extra Sauce (Chocolate / Matcha)",
+                            "price": 2.0,
+                            "is_addon": true
+                        },
+                        {
+                            "name": "Extra Fresh Fruits",
+                            "price": 3.0,
+                            "is_addon": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "section_name": "Extras",
+            "items": [
+                {
+                    "name": "Whipped Cream",
+                    "price": 0.5
+                },
+                {
+                    "name": "Pink Salt Foam",
+                    "price": 1.0
+                },
+                {
+                    "name": "Cheese Milk Cap",
+                    "price": 1.5
+                },
+                {
+                    "name": "Butterscotch Milk Foam",
+                    "price": 1.5
+                },
+                {
+                    "name": "Ice-cream",
+                    "price": 2.0
+                },
+                {
+                    "name": "Syrup (Vanilla / Hazelnut / Caramel)",
+                    "price": 0.8
+                },
+                {
+                    "name": "Alternative Milk (Soy / Almond / Oat)",
+                    "price": 1.0
+                },
+                {
+                    "name": "Cold Extra",
+                    "price": 0.5
+                }
+            ]
+        }
+    ]
+}
