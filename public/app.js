@@ -379,7 +379,7 @@ function renderTrayItems() {
     let total = 0;
 
     if (Object.keys(tray).length === 0) {
-        container.innerHTML = '<p style="text-align:center; color:var(--text-muted); margin-top:2rem;">Your tray is empty.</p>';
+        container.innerHTML = '<p style="text-align:center; color:var(--text-muted); margin-top:2rem;">Your list is empty.</p>';
         document.getElementById('tray-total').textContent = '0.00';
         return;
     }
