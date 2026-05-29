@@ -1,35 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Teddy & Co Cafe Menu</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header class="glass-header">
         <div class="header-left">
-            <button id="menu-toggle" class="icon-btn">☰</button>
             <div class="logo">
                 <h1>🧸 Teddy & Co</h1>
             </div>
         </div>
+        <div class="header-right">
+            <a href="index.html" class="website-btn">Website &rarr;</a>
+        </div>
     </header>
 
-    <!-- Slide Side Bar -->
-    <div id="sidebar-overlay" class="overlay hidden"></div>
-    <aside id="sidebar" class="sidebar">
-        <div class="sidebar-header">
-            <h2>Menu</h2>
-            <button id="close-sidebar" class="icon-btn">✕</button>
-        </div>
-        <nav class="sidebar-nav" id="sidebar-nav">
-            <!-- Categories injected here -->
-        </nav>
-    </aside>
-
     <main class="menu-container" id="menu-container">
+        <h2 class="page-title">Menu</h2>
         <!-- Loader -->
         <div class="loader" id="loader">Loading menu... 🍯</div>
         <!-- Menu items will be injected here -->
@@ -75,18 +69,22 @@
                         <!-- Image layers injected here -->
                     </div>
                 </div>
-                <div id="addon-item-desc" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;"></div>
+                <div id="addon-item-desc" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                </div>
                 <div id="addon-list" style="display: flex; flex-direction: column; gap: 0.8rem;">
                     <!-- Modifiers injected here -->
                 </div>
             </div>
             <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
                 <div class="total-estimation" style="font-size: 1.4rem;">$<span id="addon-total">0.00</span></div>
-                <button id="addon-add-btn" style="background: var(--accent); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 12px; font-weight: bold; font-size: 1.1rem; cursor: pointer;">Add to Tray</button>
+                <button id="addon-add-btn"
+                    style="background: var(--accent); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 12px; font-weight: bold; font-size: 1.1rem; cursor: pointer;">Add
+                    to Tray</button>
             </div>
         </div>
     </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>

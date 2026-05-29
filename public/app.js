@@ -69,66 +69,7 @@ function parseMenuData(data) {
         }
     });
 
-    initNav();
     renderMenu();
-}
-
-function initNav() {
-    const nav = document.getElementById('sidebar-nav');
-    nav.innerHTML = ''; // clear previous
-    categories.forEach((cat, index) => {
-        const btn = document.createElement('button');
-        btn.className = `side-cat-btn ${index === 0 ? 'active' : ''}`;
-        btn.textContent = cat;
-        btn.onclick = () => {
-            const section = document.getElementById(`section-${cat.replace(/[^a-z0-9]/gi, '')}`);
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-                if (window.closeSidebar) window.closeSidebar();
-            }
-        };
-        nav.appendChild(btn);
-    });
-
-    // Intersection Observer for scroll spy
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.id.replace('section-', '');
-                document.querySelectorAll('.side-cat-btn').forEach(b => {
-                    if (b.textContent.replace(/[^a-z0-9]/gi, '') === id) {
-                        b.classList.add('active');
-                    } else {
-                        b.classList.remove('active');
-                    }
-                });
-            }
-        });
-    }, { rootMargin: '-80px 0px -70% 0px' });
-
-    window.sectionObserver = observer;
-    setupSidebar();
-}
-
-function setupSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('sidebar-overlay');
-    const toggleBtn = document.getElementById('menu-toggle');
-    const closeBtn = document.getElementById('close-sidebar');
-
-    const openSidebar = () => {
-        sidebar.classList.add('open');
-        overlay.classList.remove('hidden');
-    };
-
-    window.closeSidebar = () => {
-        sidebar.classList.remove('open');
-        overlay.classList.add('hidden');
-    };
-
-    if (toggleBtn) toggleBtn.onclick = openSidebar;
-    if (closeBtn) closeBtn.onclick = window.closeSidebar;
-    if (overlay) overlay.onclick = window.closeSidebar;
 }
 
 function renderMenu() {
@@ -142,6 +83,7 @@ function renderMenu() {
 
     let currentCatRendered = '';
     let currentSubCatRendered = '';
+    let currentCatContainer = null;
 
     menuData.forEach(item => {
         // Render section title when category changes
@@ -149,13 +91,28 @@ function renderMenu() {
             currentCatRendered = item.category;
             currentSubCatRendered = ''; // Reset sub-category on new category
 
+            const isWaffle = currentCatRendered.toLowerCase().includes('waffle');
+            
             const titleEl = document.createElement('div');
-            titleEl.className = 'section-title';
+            titleEl.className = 'section-title' + (isWaffle ? '' : ' folded');
             titleEl.id = `section-${currentCatRendered.replace(/[^a-z0-9]/gi, '')}`;
-            titleEl.textContent = currentCatRendered;
+            titleEl.innerHTML = `
+                <span>${currentCatRendered}</span>
+                <span class="chevron">▼</span>
+            `;
             container.appendChild(titleEl);
 
-            if (window.sectionObserver) window.sectionObserver.observe(titleEl);
+            currentCatContainer = document.createElement('div');
+            currentCatContainer.className = 'category-content' + (isWaffle ? '' : ' folded');
+            container.appendChild(currentCatContainer);
+
+            const targetContainer = currentCatContainer;
+
+            // Toggle logic
+            titleEl.onclick = () => {
+                titleEl.classList.toggle('folded');
+                targetContainer.classList.toggle('folded');
+            };
         }
 
         // Render sub-section title if exists
@@ -164,26 +121,30 @@ function renderMenu() {
             const subTitleEl = document.createElement('div');
             subTitleEl.className = 'sub-section-title';
             subTitleEl.textContent = currentSubCatRendered;
-            container.appendChild(subTitleEl);
+            currentCatContainer.appendChild(subTitleEl);
         }
 
         const qty = getItemQty(item.id);
 
         const el = document.createElement('div');
         el.className = 'menu-card';
+        const imgHtml = imageMap[item.name] ? `<img src="${imageMap[item.name]}" alt="${item.name}" class="menu-item-img">` : '';
         el.innerHTML = `
-            <div class="item-info">
-                <div class="item-name">${item.name}</div>
-                ${!item.subCategory && item.desc ? `<div class="item-desc">${item.desc}</div>` : ''}
-            </div>
-            <div class="item-bottom">
-                <div class="item-price">${item.priceStr}</div>
-                <button id="add-btn-${item.id}" class="add-btn ${qty > 0 ? 'active-qty' : ''}" onclick="addToTray('${item.id}', event)">
-                    ${qty > 0 ? `${qty} <span style="font-size:1.1rem; opacity:0.8;">+</span>` : '+'}
-                </button>
+            ${imgHtml}
+            <div class="menu-card-content">
+                <div class="item-info">
+                    <div class="item-name">${item.name}</div>
+                    ${!item.subCategory && item.desc ? `<div class="item-desc">${item.desc}</div>` : ''}
+                </div>
+                <div class="item-bottom">
+                    <div class="item-price">${item.priceStr}</div>
+                    <button id="add-btn-${item.id}" class="add-btn ${qty > 0 ? 'active-qty' : ''}" onclick="addToTray('${item.id}', event)">
+                        ${qty > 0 ? `${qty} <span style="font-size:1.1rem; opacity:0.8;">+</span>` : '+'}
+                    </button>
+                </div>
             </div>
         `;
-        container.appendChild(el);
+        currentCatContainer.appendChild(el);
     });
 }
 
@@ -233,15 +194,34 @@ function addToTray(id, event) {
 }
 
 const imageMap = {
+    "Pistachio Latte": "images/pistachio_latte.png",
+    "Mont Blanc": "images/mont_blanc.png",
+    "Banana Latte": "images/banana_latte.png",
+    "Coconut Latte": "images/coconut_latte.png",
+    "Affogato & Matcha": "images/affogato_matcha.png",
+    "Honey Butterfly Lemonade Soda": "images/honey_butterfly_lemonade_soda.png",
+    "Orange Zest Matcha Latte": "images/orange_zest_matcha_latte.png",
+    "Earthy Matcha": "images/earthy_matcha.png",
+    "Honey Cinnamon Matcha": "images/honey_cinnamon_matcha.png",
+    "Matcha Latte": "images/matcha_latte.png",
+    "Matcha Strawberry": "images/matcha_strawberry.png",
+    "Coco Matcha": "images/coco_matcha.png",
+    "Banana Matcha": "images/banana_matcha.png",
+    "Double Matcha Brulee": "images/double_matcha_brulee.png",
+    "Classic Cocoa": "images/classic_cocoa.png",
+    "Pistachio Cocoa": "images/pistachio_cocoa.png",
+    "Strawberry Covered Cocoa": "images/strawberry_covered_cocoa.png",
+    "Butterscotch Cream Cocoa": "images/butterscotch_cream_cocoa.png",
+    "Banana Cocoa": "images/banana_cocoa.png",
     "White Chocolate Matcha Croc Waffle": "images/matcha_croc.png",
     "Original Croc Waffle": "images/original_croc.png",
     "Custard Croc Waffle": "images/custard_croc.png",
     "Chocolate Croc Waffle": "images/choc_croc.png",
-    "Melted Full Cheese Waffle": "images/chesse_croc.png",
-    "Ice Cream Scoop (Vanilla)": "images/icecream-vanilla.png",
-    "Ice Cream Scoop (Matcha)": "images/icecream-matcha.png",
-    "Ice-cream Scoop (Vanilla)": "images/icecream-vanilla.png",
-    "Ice-cream Scoop (Matcha)": "images/icecream-matcha.png",
+    "Melted Full Cheese Waffle": "images/cheese_croc.png",
+    "Ice Cream Scoop (Vanilla)": "images/icecream_vanilla.png",
+    "Ice Cream Scoop (Matcha)": "images/icecream_matcha.png",
+    "Ice-cream Scoop (Vanilla)": "images/icecream_vanilla.png",
+    "Ice-cream Scoop (Matcha)": "images/icecream_matcha.png",
     "Extra Sauce (Chocolate)": "images/choc_sauce.png",
     "Extra Sauce (Matcha)": "images/matcha_sauce.png",
     "Extra Fresh Fruits": "images/fruits.png"
