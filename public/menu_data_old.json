@@ -1,8 +1,8 @@
 {
-    "restaurant_name": "TÉDDY & CO",
+    "restaurant_name": "Demo Cafe",
     "contact": {
-        "phone": "0416 728 104",
-        "instagram": "@teddyincoperth"
+        "phone": "555 123 4567",
+        "instagram": "@democafe"
     },
     "notes": "Cakes of the day: Please browse at our cabinet",
     "menu_sections": [
@@ -185,7 +185,7 @@
             ]
         },
         {
-            "section_name": "Teddy's Cocoa",
+            "section_name": "Signature Cocoa",
             "items": [
                 {
                     "name": "Classic Cocoa",

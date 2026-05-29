@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchMenu() {
     try {
-        const response = await fetch('/Teddy_and_Co_Relational_Menu_v2.json');
+        const response = await fetch('/menu_data.json');
         const data = await response.json();
         parseMenuData(data);
     } catch (error) {
