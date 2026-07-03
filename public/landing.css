@@ -275,15 +275,38 @@ section {
     border-color: var(--honey-yellow);
 }
 
-.cute-card img {
+/* Generic icon placeholders replacing product images */
+.hero-icon-placeholder {
+    font-size: 9rem;
+    line-height: 1;
     width: 100%;
+    max-width: 400px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-icon-placeholder {
+    font-size: 4rem;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon-placeholder {
+    font-size: 5rem;
     height: 160px;
-    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 1.5rem;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.cute-card:hover img {
+.cute-card:hover .card-icon-placeholder {
     transform: scale(1.2) rotate(8deg);
 }
 

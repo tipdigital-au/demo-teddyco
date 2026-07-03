@@ -193,39 +193,8 @@ function addToTray(id, event) {
     addConfiguredItemToTray(id, []);
 }
 
-const imageMap = {
-    "Pistachio Latte": "images/pistachio_latte.png",
-    "Mont Blanc": "images/mont_blanc.png",
-    "Banana Latte": "images/banana_latte.png",
-    "Coconut Latte": "images/coconut_latte.png",
-    "Affogato & Matcha": "images/affogato_matcha.png",
-    "Honey Butterfly Lemonade Soda": "images/honey_butterfly_lemonade_soda.png",
-    "Orange Zest Matcha Latte": "images/orange_zest_matcha_latte.png",
-    "Earthy Matcha": "images/earthy_matcha.png",
-    "Honey Cinnamon Matcha": "images/honey_cinnamon_matcha.png",
-    "Matcha Latte": "images/matcha_latte.png",
-    "Matcha Strawberry": "images/matcha_strawberry.png",
-    "Coco Matcha": "images/coco_matcha.png",
-    "Banana Matcha": "images/banana_matcha.png",
-    "Double Matcha Brulee": "images/double_matcha_brulee.png",
-    "Classic Cocoa": "images/classic_cocoa.png",
-    "Pistachio Cocoa": "images/pistachio_cocoa.png",
-    "Strawberry Covered Cocoa": "images/strawberry_covered_cocoa.png",
-    "Butterscotch Cream Cocoa": "images/butterscotch_cream_cocoa.png",
-    "Banana Cocoa": "images/banana_cocoa.png",
-    "White Chocolate Matcha Croc Waffle": "images/matcha_croc.png",
-    "Original Croc Waffle": "images/original_croc.png",
-    "Custard Croc Waffle": "images/custard_croc.png",
-    "Chocolate Croc Waffle": "images/choc_croc.png",
-    "Melted Full Cheese Waffle": "images/cheese_croc.png",
-    "Ice Cream Scoop (Vanilla)": "images/icecream_vanilla.png",
-    "Ice Cream Scoop (Matcha)": "images/icecream_matcha.png",
-    "Ice-cream Scoop (Vanilla)": "images/icecream_vanilla.png",
-    "Ice-cream Scoop (Matcha)": "images/icecream_matcha.png",
-    "Extra Sauce (Chocolate)": "images/choc_sauce.png",
-    "Extra Sauce (Matcha)": "images/matcha_sauce.png",
-    "Extra Fresh Fruits": "images/fruits.png"
-};
+// imageMap is intentionally empty for the demo site — no proprietary product photos are shown
+const imageMap = {};
 
 const layerZIndex = {
     "Extra Sauce (Chocolate)": 2,
