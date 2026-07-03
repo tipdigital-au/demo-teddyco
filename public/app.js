@@ -128,7 +128,8 @@ function renderMenu() {
 
         const el = document.createElement('div');
         el.className = 'menu-card';
-        const imgHtml = imageMap[item.name] ? `<img src="${imageMap[item.name]}" alt="${item.name}" class="menu-item-img">` : '';
+        const iconSrc = getCategoryIcon(item.category);
+        const imgHtml = `<img src="${iconSrc}" alt="${item.category}" class="menu-item-img menu-item-icon">`;
         el.innerHTML = `
             ${imgHtml}
             <div class="menu-card-content">
@@ -193,8 +194,16 @@ function addToTray(id, event) {
     addConfiguredItemToTray(id, []);
 }
 
-// imageMap is intentionally empty for the demo site — no proprietary product photos are shown
+// imageMap is intentionally empty — no proprietary product photos are used
 const imageMap = {};
+
+// Returns a generic category icon path for display on menu cards
+function getCategoryIcon(category) {
+    if (!category) return '';
+    const cat = category.toLowerCase();
+    if (cat.includes('waffle')) return 'images/generic_waffle.svg';
+    return 'images/generic_drink.svg'; // default for all drink categories
+}
 
 const layerZIndex = {
     "Extra Sauce (Chocolate)": 2,

@@ -221,6 +221,14 @@ body {
     align-self: center;
 }
 
+/* Generic category icons — styled softer than product photos */
+.menu-item-icon {
+    background: var(--accent-light);
+    border-radius: 14px;
+    padding: 6px;
+    opacity: 0.9;
+}
+
 .menu-card-content {
     display: flex;
     flex-direction: column;

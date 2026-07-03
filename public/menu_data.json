@@ -1874,11 +1874,11 @@
             ]
         },
         {
-            "category_name": "Croc Waffle",
+            "category_name": "Signature Waffle",
             "type": "food",
             "items": [
                 {
-                    "item_name": "Original Croc Waffle",
+                    "item_name": "Original Waffle",
                     "base_price": 10.9,
                     "series_tag": "Classic Series",
                     "available_modifiers": [
@@ -1905,7 +1905,7 @@
                     ]
                 },
                 {
-                    "item_name": "White Chocolate Matcha Croc Waffle",
+                    "item_name": "White Chocolate Matcha Waffle",
                     "base_price": 13.9,
                     "series_tag": "Signature Series",
                     "available_modifiers": [
@@ -1932,7 +1932,7 @@
                     ]
                 },
                 {
-                    "item_name": "Custard Croc Waffle",
+                    "item_name": "Custard Waffle",
                     "base_price": 12.9,
                     "series_tag": "Classic Series",
                     "available_modifiers": [
@@ -1959,7 +1959,7 @@
                     ]
                 },
                 {
-                    "item_name": "Chocolate Croc Waffle",
+                    "item_name": "Chocolate Waffle",
                     "base_price": 12.9,
                     "series_tag": "Classic Series",
                     "available_modifiers": [
